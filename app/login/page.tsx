@@ -14,8 +14,12 @@ export default function LoginPage() {
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   async function login() {
+    if (loading) return;
+
+    setLoading(true);
     setError("");
 
     try {
@@ -45,33 +49,44 @@ export default function LoginPage() {
           setError("");
         }, 2500);
       }
-    } catch (err) {
-      console.error(err);
+    } catch {
       setError("Sunucuya bağlanılamadı.");
     }
+
+    setLoading(false);
   }
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#050816] via-[#081c40] to-[#020611] flex items-center justify-center px-5 py-10">
+    <main className="relative min-h-screen overflow-y-auto bg-gradient-to-b from-[#050816] via-[#081c40] to-[#020611] flex items-center justify-center px-5 py-10">
 
       <Stars />
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90vw] max-w-[900px] aspect-square bg-blue-500/10 blur-[180px]" />
       <div className="absolute bottom-0 right-0 w-[60vw] max-w-[500px] aspect-square bg-pink-500/10 blur-[150px]" />
 
-      <div className="relative z-10 w-full max-w-xl">
+      <div className="relative z-10 w-full max-w-md">
 
-        <div className="glass rounded-[32px] md:rounded-[40px] shadow-2xl p-6 sm:p-8 md:p-10">
+        <div
+          className="
+          glass
+          rounded-[34px]
+          shadow-2xl
+          p-7
+          sm:p-8
+          md:p-10
+          backdrop-blur-xl
+          "
+        >
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-white">
+          <h1 className="text-4xl md:text-5xl font-bold text-center">
             🤍 Hoş Geldin
           </h1>
 
-          <p className="text-center text-gray-300 italic mt-5 text-sm sm:text-base">
+          <p className="text-center text-gray-300 italic mt-4">
             Sadece ikimizin bildiği küçük dünyamıza giriş...
           </p>
 
-          <div className="mt-10">
+          <div className="mt-9">
 
             <label className="text-gray-300 text-sm">
               Kullanıcı Adı
@@ -79,9 +94,10 @@ export default function LoginPage() {
 
             <input
               value={username}
-              onKeyDown={(e) => e.key === "Enter" && login()}
               onChange={(e) => setUsername(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && login()}
               placeholder="Kullanıcı Adı"
+              autoComplete="username"
               className="
                 mt-2
                 w-full
@@ -91,19 +107,16 @@ export default function LoginPage() {
                 border-white/20
                 px-5
                 py-4
-                outline-none
                 text-white
-                placeholder:text-gray-500
+                outline-none
                 focus:border-pink-400
-                focus:ring-2
-                focus:ring-pink-400/30
                 transition
               "
             />
 
           </div>
 
-          <div className="mt-8">
+          <div className="mt-7">
 
             <label className="text-gray-300 text-sm">
               Şifre
@@ -114,8 +127,9 @@ export default function LoginPage() {
               <input
                 type={showPassword ? "text" : "password"}
                 value={password}
-                onKeyDown={(e) => e.key === "Enter" && login()}
                 onChange={(e) => setPassword(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && login()}
+                autoComplete="current-password"
                 placeholder="Şifre"
                 className="
                   w-full
@@ -126,12 +140,9 @@ export default function LoginPage() {
                   px-5
                   py-4
                   pr-16
-                  outline-none
                   text-white
-                  placeholder:text-gray-500
+                  outline-none
                   focus:border-pink-400
-                  focus:ring-2
-                  focus:ring-pink-400/30
                   transition
                 "
               />
@@ -139,7 +150,7 @@ export default function LoginPage() {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-300 hover:text-white transition"
+                className="absolute right-5 top-1/2 -translate-y-1/2 text-xl"
               >
                 {showPassword ? "🙈" : "👁️"}
               </button>
@@ -150,43 +161,43 @@ export default function LoginPage() {
 
           <button
             onClick={login}
+            disabled={loading}
             className="
-              breathe
-              mt-10
+              mt-8
               w-full
               rounded-2xl
               bg-gradient-to-r
               from-pink-500
-              via-pink-400
               to-purple-500
               py-4
-              text-lg
-              md:text-xl
+              text-xl
               font-bold
               text-white
-              hover:scale-[1.03]
+              shadow-[0_0_30px_rgba(236,72,153,.45)]
               active:scale-95
-              transition-all
-              duration-300
-              shadow-[0_0_30px_rgba(236,72,153,0.45)]
+              transition
+              disabled:opacity-60
             "
           >
-            ❤️ Giriş Yap
+            {loading ? "Giriş Yapılıyor..." : "❤️ Giriş Yap"}
           </button>
 
           {error && (
-            <p className="text-red-400 text-center mt-6">
-              ❌ {error}
+            <p className="text-center text-red-400 mt-5">
+              {error}
             </p>
           )}
 
           {success && (
-            <p className="text-green-400 text-center mt-6 text-lg">
+            <p className="text-center text-green-400 mt-5">
               ❤️ Hoş geldin Ömrüşüm...
             </p>
           )}
 
         </div>
+
+        {/* iPhone Safe Area */}
+        <div className="h-8" />
 
       </div>
 
