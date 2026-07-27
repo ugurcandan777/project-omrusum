@@ -5,19 +5,19 @@ import NoteBox from "@/components/NoteBox";
 const videos = [
   {
     src: "/videos/video1.MP4",
-    title: "İlk Videomuz 🤍",
+    title: "Hayatımın Başrolü ile Sunuculuk 🤍",
   },
   {
     src: "/videos/video2.MP4",
-    title: "Mutlu Anımız ❤️",
+    title: "Mutlu Anımız 🤍",
   },
   {
     src: "/videos/video3.mp4",
-    title: "En Güzel Gülüşün 😊",
+    title: "En Güzel Gülüşün Hepsi Çok güzel 😊",
   },
   {
     src: "/videos/video4.mp4",
-    title: "Birlikte Geçirdiğimiz Gün 🌸",
+    title: "Birlikte Aşkımızı Haykırdığımız Konser 🌸",
   },
   {
     src: "/videos/video5.mp4",
