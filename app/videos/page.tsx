@@ -29,7 +29,6 @@ const videos = [
   },
 ];
 
-
 export default function VideosPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#081229] via-[#0d1b3d] to-[#020611] text-white px-4 py-8 sm:px-8 sm:py-10">
@@ -40,7 +39,7 @@ export default function VideosPage() {
           🎥 Videolarımız
         </h1>
 
-        <p className="text-center text-gray-300 italic mt-4 mb-10 text-base sm:text-xl">
+        <p className="text-center text-gray-300 italic mt-4 mb-10">
           Hareket eden anılar bazen en güzel hatıralardır...
         </p>
 
@@ -50,34 +49,24 @@ export default function VideosPage() {
 
             <div
               key={video.src}
-              className="
-                bg-white/10
-                backdrop-blur-xl
-                rounded-3xl
-                p-5
-                sm:p-7
-                border
-                border-white/20
-                shadow-xl
-                hover:scale-[1.02]
-                transition-all
-                duration-300
-              "
+              className="bg-white/10 backdrop-blur-xl rounded-3xl p-6 border border-white/20 shadow-xl"
             >
 
               <video
                 controls
+                preload="metadata"
+                playsInline
                 className="w-full rounded-2xl shadow-xl"
               >
                 <source src={video.src} type="video/mp4" />
-                Tarayıcınız video etiketini desteklemiyor.
+                Tarayıcınız videoyu desteklemiyor.
               </video>
 
-              <h2 className="text-xl sm:text-2xl font-bold mt-6">
+              <h2 className="text-2xl font-bold mt-5">
                 {video.title}
               </h2>
 
-              <p className="text-gray-300 mt-2 mb-5 text-sm sm:text-base">
+              <p className="text-gray-300 mt-3 mb-6">
                 Bu anının hissettirdiklerini buraya yazabilirsin. 🤍
               </p>
 
