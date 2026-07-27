@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import NoteBox from "@/components/NoteBox";
 
 const photos = [
@@ -51,13 +50,7 @@ export default function MemoriesPage() {
 
           <div
             key={photo.src}
-            className="
-              glass
-              rounded-3xl
-              overflow-hidden
-              hover-card
-              glow
-            "
+            className="glass rounded-3xl overflow-hidden hover-card glow"
           >
 
             <div
@@ -66,11 +59,11 @@ export default function MemoriesPage() {
             >
 
               <img
-  src={photo.src}
-  alt={photo.title}
-  className="w-full h-64 md:h-72 object-cover"
-/>
-
+                src={photo.src}
+                alt={photo.title}
+                className="w-full h-64 md:h-72 object-cover"
+                loading="lazy"
+              />
 
             </div>
 
@@ -105,17 +98,10 @@ export default function MemoriesPage() {
               ✕
             </button>
 
-            <Image
+            <img
               src={photos[selectedPhoto].src}
               alt={photos[selectedPhoto].title}
-              width={1200}
-              height={900}
-              className="
-                w-full
-                rounded-3xl
-                object-contain
-                max-h-[75vh]
-              "
+              className="w-full rounded-3xl object-contain max-h-[75vh]"
             />
 
             <h2 className="text-2xl md:text-4xl font-bold text-center mt-8">
