@@ -65,18 +65,12 @@ export default function MemoriesPage() {
               className="cursor-pointer"
             >
 
-              <Image
-                src={photo.src}
-                alt={photo.title}
-                width={500}
-                height={400}
-                className="
-                  w-full
-                  h-64
-                  md:h-72
-                  object-cover
-                "
-              />
+              <img
+  src={photo.src}
+  alt={photo.title}
+  className="w-full h-64 md:h-72 object-cover"
+/>
+
 
             </div>
 
