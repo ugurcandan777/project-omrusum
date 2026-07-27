@@ -4,11 +4,11 @@ import NoteBox from "@/components/NoteBox";
 
 const videos = [
   {
-    src: "/videos/video1.mp4",
+    src: "/videos/video1.MP4",
     title: "İlk Videomuz 🤍",
   },
   {
-    src: "/videos/video2.mp4",
+    src: "/videos/video2.MP4",
     title: "Mutlu Anımız ❤️",
   },
   {
@@ -28,6 +28,7 @@ const videos = [
     title: "Sonsuza Kadar Sen 🤍",
   },
 ];
+
 
 export default function VideosPage() {
   return (
