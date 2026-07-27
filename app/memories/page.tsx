@@ -6,27 +6,27 @@ import NoteBox from "@/components/NoteBox";
 
 const photos = [
   {
-    src: "/images/foto1.jpg",
+    src: "/images/foto1.JPG",
     title: "Damlişimizin ilk doğum günü :) 🤍",
   },
   {
-    src: "/images/foto2.jpg",
+    src: "/images/foto2.JPG",
     title: "Nişanlılık Cosplay ❤️",
   },
   {
-    src: "/images/foto3.jpg",
+    src: "/images/foto3.JPG",
     title: "Birlikte Deniz 🌊",
   },
   {
-    src: "/images/foto4.jpg",
+    src: "/images/foto4.JPG",
     title: "Kız Kulesinin Önünde Aşka Geliş 😊",
   },
   {
-    src: "/images/foto5.jpg",
+    src: "/images/foto5.JPG",
     title: "Uludağ ve Aşk ❤️",
   },
   {
-    src: "/images/foto6.jpg",
+    src: "/images/foto6.JPG",
     title: "Canım Ömrüşüm 🌸",
   },
 ];
