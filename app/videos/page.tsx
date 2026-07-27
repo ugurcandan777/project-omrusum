@@ -1,0 +1,95 @@
+"use client";
+
+import NoteBox from "@/components/NoteBox";
+
+const videos = [
+  {
+    src: "/videos/video1.mp4",
+    title: "İlk Videomuz 🤍",
+  },
+  {
+    src: "/videos/video2.mp4",
+    title: "Mutlu Anımız ❤️",
+  },
+  {
+    src: "/videos/video3.mp4",
+    title: "En Güzel Gülüşün 😊",
+  },
+  {
+    src: "/videos/video4.mp4",
+    title: "Birlikte Geçirdiğimiz Gün 🌸",
+  },
+  {
+    src: "/videos/video5.mp4",
+    title: "Canım Ömrüşüm 💕",
+  },
+  {
+    src: "/videos/video6.mp4",
+    title: "Sonsuza Kadar Sen 🤍",
+  },
+];
+
+export default function VideosPage() {
+  return (
+    <main className="min-h-screen bg-gradient-to-b from-[#081229] via-[#0d1b3d] to-[#020611] text-white px-4 py-8 sm:px-8 sm:py-10">
+
+      <div className="max-w-7xl mx-auto">
+
+        <h1 className="text-3xl sm:text-5xl font-bold text-center">
+          🎥 Videolarımız
+        </h1>
+
+        <p className="text-center text-gray-300 italic mt-4 mb-10 text-base sm:text-xl">
+          Hareket eden anılar bazen en güzel hatıralardır...
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          {videos.map((video) => (
+
+            <div
+              key={video.src}
+              className="
+                bg-white/10
+                backdrop-blur-xl
+                rounded-3xl
+                p-5
+                sm:p-7
+                border
+                border-white/20
+                shadow-xl
+                hover:scale-[1.02]
+                transition-all
+                duration-300
+              "
+            >
+
+              <video
+                controls
+                className="w-full rounded-2xl shadow-xl"
+              >
+                <source src={video.src} type="video/mp4" />
+                Tarayıcınız video etiketini desteklemiyor.
+              </video>
+
+              <h2 className="text-xl sm:text-2xl font-bold mt-6">
+                {video.title}
+              </h2>
+
+              <p className="text-gray-300 mt-2 mb-5 text-sm sm:text-base">
+                Bu anının hissettirdiklerini buraya yazabilirsin. 🤍
+              </p>
+
+              <NoteBox storageKey={video.src} />
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+    </main>
+  );
+}
