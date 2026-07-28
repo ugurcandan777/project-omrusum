@@ -33,7 +33,7 @@ const videos = [
   },
   {
     src: "/videos/video8.mp4",
-    title: "Deli diyorlar ban Desinler Değişemem desinler değişemem 🤍",
+    title: "Deli diyorlar bana Desinler Değişemem desinler değişemem 🤍",
   },
   {
     src: "/videos/video9.mp4",
