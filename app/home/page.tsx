@@ -129,7 +129,7 @@ function toggleSong() {
 <div className="glass rounded-3xl mt-8 p-8 text-center">
 
 <Image
-  src="/images/damla-album.jpg"
+  src="/images/damla-album.JPG"
   alt="Damla'nın Şarkısı"
   width={260}
   height={260}
