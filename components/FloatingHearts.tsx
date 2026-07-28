@@ -46,7 +46,7 @@ export default function FloatingHearts() {
           }}
           className="fixed pointer-events-none z-[9999] animate-heart text-3xl"
         >
-          ❤️
+          🤍
         </div>
       ))}
     </>
