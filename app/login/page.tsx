@@ -16,6 +16,8 @@ export default function LoginPage() {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const [audioEnabled, setAudioEnabled] = useState(true);
+
   async function login() {
     if (loading) return;
 
@@ -36,12 +38,27 @@ export default function LoginPage() {
 
       if (res.ok) {
         localStorage.setItem("logged", "true");
-
         setSuccess(true);
 
-        setTimeout(() => {
-          router.push("/home");
-        }, 1200);
+        if (audioEnabled) {
+          const random = Math.floor(Math.random() * 5) + 1;
+
+          const audio = new Audio(`/audio/hosgeldin${random}.mp3`);
+
+          audio.play().catch(() => {});
+
+          audio.onended = () => {
+            router.push("/home");
+          };
+
+          setTimeout(() => {
+            router.push("/home");
+          }, 7000);
+        } else {
+          setTimeout(() => {
+            router.push("/home");
+          }, 1200);
+        }
       } else {
         setError("Kullanıcı adı veya şifre yanlış.");
 
@@ -182,6 +199,21 @@ export default function LoginPage() {
             {loading ? "Giriş Yapılıyor..." : "❤️ Giriş Yap"}
           </button>
 
+          <div className="mt-5 flex items-center justify-center gap-3">
+
+            <input
+              type="checkbox"
+              checked={audioEnabled}
+              onChange={(e) => setAudioEnabled(e.target.checked)}
+              className="w-5 h-5 accent-pink-500"
+            />
+
+            <span className="text-sm text-gray-300">
+              Açılışta sesimi çal ❤️
+            </span>
+
+          </div>
+
           {error && (
             <p className="text-center text-red-400 mt-5">
               {error}
@@ -196,7 +228,6 @@ export default function LoginPage() {
 
         </div>
 
-        {/* iPhone Safe Area */}
         <div className="h-8" />
 
       </div>
