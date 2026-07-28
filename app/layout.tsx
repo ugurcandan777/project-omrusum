@@ -40,10 +40,18 @@ export const metadata: Metadata = {
     statusBarStyle: "black-translucent",
     title: "Ömrüşüm 🤍",
   },
+
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export const viewport: Viewport = {
   themeColor: "#020611",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -54,15 +62,31 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
-      data-scroll-behavior="smooth"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-screen bg-[#020611] text-white overflow-x-hidden">
-
+      <body
+        className="
+          min-h-screen
+          bg-[#020611]
+          text-white
+          overflow-x-hidden
+          selection:bg-pink-500/40
+          selection:text-white
+        "
+      >
         <FloatingHearts />
 
-        {children}
-
+        <div
+          className="
+            min-h-screen
+            w-full
+            max-w-[100vw]
+            overflow-x-hidden
+          "
+        >
+          {children}
+        </div>
       </body>
     </html>
   );

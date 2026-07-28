@@ -13,7 +13,7 @@ const videos = [
   },
   {
     src: "/videos/video3.mp4",
-    title: "En Güzel Gülüşün Hepsi Çok güzel 😊",
+    title: "En Güzel Gülüşün Hepsi Çok Güzel 😊",
   },
   {
     src: "/videos/video4.mp4",
@@ -26,6 +26,22 @@ const videos = [
   {
     src: "/videos/video6.mp4",
     title: "Sonsuza Kadar Sen 🤍",
+  },
+  {
+    src: "/videos/video7.mp4",
+    title: "Öpmelere doyamadığım ❤️",
+  },
+  {
+    src: "/videos/video8.mp4",
+    title: "Deli diyorlar ban Desinler Değişemem desinler değişemem 🤍",
+  },
+  {
+    src: "/videos/video9.mp4",
+    title: "Bir zamanlar M4 ve iett bizi hep böyle görürdü 🌹",
+  },
+  {
+    src: "/videos/video10.mp4",
+    title: "Sesine kurban olduğum 💍",
   },
 ];
 
