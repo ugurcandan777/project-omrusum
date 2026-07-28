@@ -5,6 +5,15 @@ import { useState }from "react";
 
 const songs = [
   {
+  title: "Neyim Yoksa Yerine Sensin",
+  artist: "Damla 🤍",
+  cover: "/images/damla-album.jpg",
+  audio: "/music/damla.mp3",
+  note:
+    "Bana yazdığın bu şarkı hayatım boyunca sahip olduğum en değerli hediyelerden biri... Seni her dinlediğimde sana yeniden âşık oluyorum. 🤍",
+  favorite: true,
+},
+    {
     title: "Meleklerin Sözü Var",
     artist: "Yalın",
     cover: "/covers/meleklerinsozuvar.jpg",
@@ -60,18 +69,41 @@ export default function MusicPage() {
         {songs.map((song) => (
           <div
             key={song.title}
-            className="bg-white/10 backdrop-blur-2xl rounded-3xl border border-white/20 shadow-xl p-5 md:p-8 hover:scale-[1.01] transition"
+            className="
+bg-white/10
+backdrop-blur-3xl
+rounded-[36px]
+border
+border-pink-300/20
+shadow-[0_0_60px_rgba(236,72,153,.12)]
+p-6
+md:p-10
+hover:scale-[1.02]
+transition-all
+duration-500
+"
           >
 
             <div className="flex flex-col lg:flex-row gap-8 items-center">
 
               <Image
-                src={song.cover}
-                alt={song.title}
-                width={220}
-                height={220}
-                className="rounded-3xl object-cover w-48 h-48 md:w-[220px] md:h-[220px]"
-              />
+  src={song.cover}
+  alt={song.title}
+  width={280}
+  height={280}
+  className="
+  rounded-[30px]
+  object-cover
+  w-60
+  h-60
+  md:w-[280px]
+  md:h-[280px]
+  shadow-[0_0_40px_rgba(255,255,255,.18)]
+  transition-all
+  duration-700
+  hover:scale-105
+  "
+/>
 
               <div className="flex-1 w-full">
 
@@ -79,7 +111,7 @@ export default function MusicPage() {
 
                   <div>
 
-                    <h2 className="text-2xl md:text-4xl font-bold">
+                    <h2 className="text-3xl md:text-5xl font-bold">
                       🎵 {song.title}
                     </h2>
 
@@ -91,7 +123,7 @@ export default function MusicPage() {
 
                   {song.favorite && (
                     <div className="bg-pink-500 rounded-full px-4 py-2 text-sm md:text-base font-semibold self-start">
-                      ❤️ Favorimiz
+                     🤍 Damla'nın Bana Hediyesi
                     </div>
                   )}
 
@@ -106,11 +138,26 @@ export default function MusicPage() {
                 </div>
 
                 <button
-                  onClick={() => setCurrentSong(song.audio)}
-                  className="mt-6 w-full md:w-auto bg-pink-500 hover:bg-pink-600 transition px-7 py-4 rounded-xl font-bold shadow-xl"
-                >
-                  ▶ Şarkıyı Çal
-                </button>
+  onClick={() => setCurrentSong(song.audio)}
+  className="
+    mt-6
+    w-full
+    md:w-auto
+    bg-gradient-to-r
+    from-pink-500
+    to-purple-500
+    hover:scale-105
+    transition-all
+    duration-300
+    px-8
+    py-4
+    rounded-2xl
+    font-bold
+    shadow-[0_0_30px_rgba(236,72,153,.35)]
+  "
+>
+  ▶ Dinlemeye Başla
+</button>
 
               </div>
 
@@ -121,17 +168,28 @@ export default function MusicPage() {
 
       </div>
 
-      <div className="text-center mt-20 pb-24">
+      <div className="text-center mt-24 pb-24">
 
-        <h2 className="text-4xl">
-          🎶
-        </h2>
+        <div className="text-6xl animate-pulse">
+          🤍
+        </div>
 
-        <p className="italic text-gray-300 mt-5 text-lg md:text-xl leading-8">
-          Her şarkıda biraz biz var...
+        <p className="italic text-gray-300 mt-6 text-lg md:text-2xl leading-10">
+
+          Bu uygulamada onlarca anımız olabilir...
+
+          <br /><br />
+
+          Ama bazı şarkılar vardır ki...
+
+          <br /><br />
+
+          İnsan her dinlediğinde
+
           <br />
-          Çünkü bazı duygular kelimelerle değil,
-          melodilerle anlatılır. 🤍
+
+          ilk günkü gibi sever...
+
         </p>
 
       </div>
@@ -139,3 +197,28 @@ export default function MusicPage() {
     </main>
   );
 }
+              <div className="text-center mt-24 pb-24">
+
+  <div className="text-6xl animate-pulse">
+    🤍
+  </div>
+
+  <p className="italic text-gray-300 mt-6 text-lg md:text-2xl leading-10">
+
+    Bu uygulamada onlarca anımız olabilir...
+
+    <br /><br />
+
+    Ama bazı şarkılar vardır ki...
+
+    <br /><br />
+
+    İnsan her dinlediğinde
+
+    <br />
+
+    ilk günkü gibi sever...
+
+  </p>
+
+</div>
