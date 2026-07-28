@@ -7,7 +7,7 @@ const songs = [
   {
   title: "Neyim Yoksa Yerine Sensin",
   artist: "Damla 🤍",
-  cover: "/images/damla-album.jpg",
+  cover: "/images/damla-album.JPG",
   audio: "/music/damla.mp3",
   note:
     "Bana yazdığın bu şarkı hayatım boyunca sahip olduğum en değerli hediyelerden biri... Seni her dinlediğimde sana yeniden âşık oluyorum. 🤍",
