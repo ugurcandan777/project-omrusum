@@ -17,6 +17,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
 
   const [audioEnabled, setAudioEnabled] = useState(true);
+  const [showWelcome, setShowWelcome] = useState(false);
 
   async function login() {
     if (loading) return;
@@ -38,12 +39,25 @@ export default function LoginPage() {
 
       if (res.ok) {
         localStorage.setItem("logged", "true");
+
         setSuccess(true);
+        setShowWelcome(true);
 
         if (audioEnabled) {
-          const random = Math.floor(Math.random() * 5) + 1;
+          const sesler = [
+            "/audio/hosgeldin1.mp3",
+            "/audio/hosgeldin2.mp3",
+            "/audio/hosgeldin3.mp3",
+            "/audio/hosgeldin4.mp3",
+            "/audio/hosgeldin5.mp3",
+          ];
 
-          const audio = new Audio(`/audio/hosgeldin${random}.mp3`);
+          const rastgele =
+            sesler[Math.floor(Math.random() * sesler.length)];
+
+          const audio = new Audio(rastgele);
+
+          audio.volume = 1;
 
           audio.play().catch(() => {});
 
@@ -79,6 +93,7 @@ export default function LoginPage() {
       <Stars />
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90vw] max-w-[900px] aspect-square bg-blue-500/10 blur-[180px]" />
+
       <div className="absolute bottom-0 right-0 w-[60vw] max-w-[500px] aspect-square bg-pink-500/10 blur-[150px]" />
 
       <div className="relative z-10 w-full max-w-md">
@@ -231,6 +246,28 @@ export default function LoginPage() {
         <div className="h-8" />
 
       </div>
+
+      {showWelcome && (
+        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 backdrop-blur-md">
+
+          <div className="text-center animate-pulse">
+
+            <div className="text-6xl mb-6">
+              🤍
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-pink-300">
+              Hoş geldin Ömrüşüm...
+            </h2>
+
+            <p className="mt-5 text-xl text-white">
+              Seni çok özledim ❤️
+            </p>
+
+          </div>
+
+        </div>
+      )}
 
     </main>
   );
