@@ -12,7 +12,7 @@ const photos = [
   { src: "/images/foto6.JPG", title: "🌸 Canım Ömrüşüm" },
 
   { src: "/images/foto7.JPG", title: "❤️ Geleceğim ve Ben" },
-  { src: "/images/foto8.JPG", title: "🚶‍♂️ Ufak Bir Bursa Turundan" },
+  { src: "/images/foto8.JPG", title: "🚶 Ufak Bir Bursa Turundan" },
   { src: "/images/foto9.JPG", title: "🥹 Gülüşüne Hasretlendiğim Gün" },
   { src: "/images/foto10.JPG", title: "💍 Serseri Düğüncülük" },
   { src: "/images/foto11.JPG", title: "🤍 Cankuşum" },
@@ -41,14 +41,13 @@ const photos = [
   { src: "/images/foto34.JPG", title: "🍽️ Seyfo Dayının Mekânında En Yakınımla" },
   { src: "/images/foto35.JPG", title: "🎂 Damlişimin Elleriyle Hazırladığı Pasta (8 Şubat)" },
   { src: "/images/foto36.JPG", title: "🕌 Ulucami" },
-  
+];
 
 export default function MemoriesPage() {
   const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null);
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#081229] via-[#0d1b3d] to-[#020611] text-white px-5 py-10 md:px-10">
-
       <h1 className="text-3xl md:text-5xl font-bold text-center mb-4">
         📸 Anılarımız
       </h1>
@@ -58,30 +57,24 @@ export default function MemoriesPage() {
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
-
         {photos.map((photo, index) => (
-
           <div
             key={photo.src}
             className="glass rounded-3xl overflow-hidden hover-card glow"
           >
-
             <div
               onClick={() => setSelectedPhoto(index)}
               className="cursor-pointer"
             >
-
               <img
                 src={photo.src}
                 alt={photo.title}
                 className="w-full h-64 md:h-72 object-cover"
                 loading="lazy"
               />
-
             </div>
 
             <div className="p-6 text-center">
-
               <h2 className="text-xl md:text-2xl font-bold">
                 {photo.title}
               </h2>
@@ -89,21 +82,14 @@ export default function MemoriesPage() {
               <p className="text-gray-400 mt-3">
                 Fotoğrafı büyütmek için dokun 🤍
               </p>
-
             </div>
-
           </div>
-
         ))}
-
       </div>
 
       {selectedPhoto !== null && (
-
         <div className="fixed inset-0 bg-black/95 z-50 overflow-y-auto">
-
           <div className="max-w-6xl mx-auto p-5 md:p-10">
-
             <button
               onClick={() => setSelectedPhoto(null)}
               className="text-4xl hover:text-pink-400 transition mb-6"
@@ -124,13 +110,9 @@ export default function MemoriesPage() {
             <div className="mt-8">
               <NoteBox storageKey={photos[selectedPhoto].src} />
             </div>
-
           </div>
-
         </div>
-
       )}
-
     </main>
   );
 }
