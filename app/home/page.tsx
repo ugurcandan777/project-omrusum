@@ -2,12 +2,26 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Stars from "@/components/Stars";
 
 export default function HomePage() {
   const router = useRouter();
+const audioRef = useRef<HTMLAudioElement | null>(null);
+const [playing, setPlaying] = useState(false);
 
+function toggleSong() {
+  if (!audioRef.current) return;
+
+  if (playing) {
+    audioRef.current.pause();
+    setPlaying(false);
+  } else {
+    audioRef.current.play();
+    setPlaying(true);
+  }
+}
   useEffect(() => {
     const logged = localStorage.getItem("logged");
 
@@ -110,7 +124,48 @@ export default function HomePage() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
             Hoş Geldin Ömrüşüm 🤍
           </h2>
+{/* Damla'nın Bana Yazdığı Şarkı */}
 
+<div className="glass rounded-3xl mt-8 p-8 text-center">
+
+  <div className="text-5xl mb-4">
+    🎵
+  </div>
+
+  <h2 className="text-3xl font-bold">
+    Neyim Yoksa Yerine Sensin
+  </h2>
+
+  <p className="text-pink-200 italic mt-3">
+    Damla'nın bana yazdığı şarkı... 🤍
+  </p>
+
+  <button
+    onClick={toggleSong}
+    className="
+      mt-8
+      px-8
+      py-4
+      rounded-2xl
+      bg-pink-500
+      hover:bg-pink-600
+      transition
+      text-lg
+      font-semibold
+      shadow-xl
+      hover:scale-105
+    "
+  >
+    {playing ? "⏸️ Duraklat" : "▶️ Dinle"}
+  </button>
+
+  <audio
+    ref={audioRef}
+    src="/audio/damla.mp3"
+    onEnded={() => setPlaying(false)}
+  />
+
+</div>
           <p className="text-gray-300 leading-8 text-sm sm:text-base md:text-lg">
             Bu uygulama sadece bir internet sitesi değil...
             <br />
