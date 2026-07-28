@@ -28,6 +28,126 @@ const photos = [
     src: "/images/foto6.JPG",
     title: "Canım Ömrüşüm 🌸",
   },
+  {
+    src: "/images/foto7.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto8.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto9.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto10.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto11.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto12.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto13.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto14.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto15.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto16.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto17.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto18.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto19.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto20.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto21.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto22.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto23.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto24.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto25.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto26.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto27.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto28.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto29.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto30.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto31.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto32.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto33.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto34.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto35.JPG",
+    title: "❤️ Anımız",
+  },
+  {
+    src: "/images/foto36.JPG",
+    title: "❤️ Anımız",
+  },
 ];
 
 export default function MemoriesPage() {
