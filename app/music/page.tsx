@@ -89,19 +89,19 @@ duration-500
               <Image
   src={song.cover}
   alt={song.title}
-  width={280}
-  height={280}
+  width={320}
+  height={420}
   className="
-  rounded-[30px]
-  object-cover
-  w-60
-  h-60
-  md:w-[280px]
-  md:h-[280px]
-  shadow-[0_0_40px_rgba(255,255,255,.18)]
-  transition-all
-  duration-700
-  hover:scale-105
+    rounded-[30px]
+    object-cover
+    w-[260px]
+    h-[360px]
+    md:w-[320px]
+    md:h-[420px]
+    shadow-[0_0_40px_rgba(255,255,255,.18)]
+    transition-all
+    duration-700
+    hover:scale-105
   "
 />
 
