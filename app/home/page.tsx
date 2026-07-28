@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import { useRef, useState } from "react";
@@ -128,44 +128,57 @@ function toggleSong() {
 
 <div className="glass rounded-3xl mt-8 p-8 text-center">
 
-  <div className="text-5xl mb-4">
-    🎵
-  </div>
+<Image
+  src="/images/damla-album.jpg"
+  alt="Damla'nın Şarkısı"
+  width={260}
+  height={260}
+  className="
+    mx-auto
+    rounded-3xl
+    object-cover
+    shadow-2xl
+    hover:scale-105
+    transition-all
+    duration-700
+  "
+/>
 
-  <h2 className="text-3xl font-bold">
-    Neyim Yoksa Yerine Sensin
-  </h2>
+<h2 className="text-3xl font-bold mt-6">
+  🎵 Neyim Yoksa Yerine Sensin
+</h2>
 
-  <p className="text-pink-200 italic mt-3">
-    Damla'nın bana yazdığı şarkı... 🤍
-  </p>
+<p className="text-pink-200 italic mt-3">
+  Damla'nın bana yazdığı şarkı... 🤍
+</p>
 
-  <button
-    onClick={toggleSong}
-    className="
-      mt-8
-      px-8
-      py-4
-      rounded-2xl
-      bg-pink-500
-      hover:bg-pink-600
-      transition
-      text-lg
-      font-semibold
-      shadow-xl
-      hover:scale-105
-    "
-  >
-    {playing ? "⏸️ Duraklat" : "▶️ Dinle"}
-  </button>
+<button
+  onClick={toggleSong}
+  className="
+    mt-8
+    px-8
+    py-4
+    rounded-2xl
+    bg-pink-500
+    hover:bg-pink-600
+    transition
+    text-lg
+    font-semibold
+    shadow-xl
+    hover:scale-105
+  "
+>
+  {playing ? "⏸️ Duraklat" : "▶️ Dinle"}
+</button>
 
-  <audio
-    ref={audioRef}
-    src="/audio/damla.mp3"
-    onEnded={() => setPlaying(false)}
-  />
-
+<audio
+  ref={audioRef}
+  src="/music/damla.mp3"
+  onEnded={() => setPlaying(false)}
+/>
 </div>
+
+
           <p className="text-gray-300 leading-8 text-sm sm:text-base md:text-lg">
             Bu uygulama sadece bir internet sitesi değil...
             <br />

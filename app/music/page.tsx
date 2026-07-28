@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useState }from "react";
 
 const songs = [
-  {
+{
   title: "Neyim Yoksa Yerine Sensin",
   artist: "Damla 🤍",
-  cover: "/images/damla-album.JPG",
+  cover: "/images/damla-album.jpg",
   audio: "/music/damla.mp3",
   note:
     "Bana yazdığın bu şarkı hayatım boyunca sahip olduğum en değerli hediyelerden biri... Seni her dinlediğimde sana yeniden âşık oluyorum. 🤍",
@@ -158,67 +158,28 @@ duration-500
 >
   ▶ Dinlemeye Başla
 </button>
-
-              </div>
-
+</div>
             </div>
-
           </div>
         ))}
-
       </div>
 
       <div className="text-center mt-24 pb-24">
-
         <div className="text-6xl animate-pulse">
           🤍
         </div>
 
         <p className="italic text-gray-300 mt-6 text-lg md:text-2xl leading-10">
-
           Bu uygulamada onlarca anımız olabilir...
-
           <br /><br />
-
           Ama bazı şarkılar vardır ki...
-
           <br /><br />
-
           İnsan her dinlediğinde
-
           <br />
-
           ilk günkü gibi sever...
-
         </p>
-
       </div>
 
     </main>
   );
 }
-              <div className="text-center mt-24 pb-24">
-
-  <div className="text-6xl animate-pulse">
-    🤍
-  </div>
-
-  <p className="italic text-gray-300 mt-6 text-lg md:text-2xl leading-10">
-
-    Bu uygulamada onlarca anımız olabilir...
-
-    <br /><br />
-
-    Ama bazı şarkılar vardır ki...
-
-    <br /><br />
-
-    İnsan her dinlediğinde
-
-    <br />
-
-    ilk günkü gibi sever...
-
-  </p>
-
-</div>
