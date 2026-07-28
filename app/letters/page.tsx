@@ -18,6 +18,8 @@ export default function LettersPage() {
 
       <div className="max-w-4xl mx-auto space-y-8">
 
+        {/* 1. Mektup */}
+
         <div className="glass rounded-3xl p-8 shadow-xl">
 
           <h2 className="text-2xl font-bold">
@@ -168,7 +170,7 @@ Her şeyinle...
 
 Resmen bana aşkını haykırıyordun.
 
-Ben de sana bakıp o haykırışına sessizce eşlik ediyordum.
+Ben de sana bakıp o haykırışına eşlik ediyordum.
 
 Ama o heyecanla bunu ne kadar fark edebildin bilmiyorum. 😊
 
@@ -213,6 +215,153 @@ Her şeyin başyapıtı sensin sevgilim.
 Seni çok seviyorum. 🤍`}
 
           </LetterBox>
+
+        </div>
+ <div className="glass rounded-3xl p-8 shadow-xl opacity-90">
+
+          <h2 className="text-2xl font-bold">
+            🌸 Sana Söylemek İstediklerim
+          </h2>
+
+          <p className="text-gray-300 italic mt-2">
+            📅 Çok Yakında...
+          </p>
+
+          <div className="mt-8 text-center">
+
+            <div className="text-6xl mb-4">
+              🔒
+            </div>
+
+            <p className="text-gray-300 text-lg italic">
+              Bu mektup henüz yazılıyor...
+            </p>
+
+            <p className="text-pink-300 mt-3">
+              Yakında seni bekleyen yeni satırlar olacak. 🤍
+            </p>
+
+          </div>
+
+        </div>
+
+        {/* 3. Mektup */}
+
+        <div className="glass rounded-3xl p-8 shadow-xl opacity-90">
+
+          <h2 className="text-2xl font-bold">
+            ❤️ Seni Neden Seviyorum
+          </h2>
+
+          <p className="text-gray-300 italic mt-2">
+            📅 Çok Yakında...
+          </p>
+
+          <div className="mt-8 text-center">
+
+            <div className="text-6xl mb-4">
+              🔒
+            </div>
+
+            <p className="text-gray-300 text-lg italic">
+              Kalbimde yazılmayı bekleyen yüzlerce sebep var...
+            </p>
+
+            <p className="text-pink-300 mt-3">
+              Biraz daha sabret aşkım. ❤️
+            </p>
+
+          </div>
+
+        </div>
+
+        {/* 4. Mektup */}
+
+        <div className="glass rounded-3xl p-8 shadow-xl opacity-90">
+
+          <h2 className="text-2xl font-bold">
+            ✨ Birlikte Kurduğumuz Hayaller
+          </h2>
+
+          <p className="text-gray-300 italic mt-2">
+            📅 Çok Yakında...
+          </p>
+
+          <div className="mt-8 text-center">
+
+            <div className="text-6xl mb-4">
+              🔒
+            </div>
+
+            <p className="text-gray-300 text-lg italic">
+              Geleceğimizin en güzel hayalleri burada olacak...
+            </p>
+
+            <p className="text-pink-300 mt-3">
+              Birlikte okuyacağız. 🌙
+            </p>
+
+          </div>
+
+        </div>
+
+        {/* 5. Mektup */}
+
+        <div className="glass rounded-3xl p-8 shadow-xl opacity-90">
+
+          <h2 className="text-2xl font-bold">
+            💍 Geleceğimiz
+          </h2>
+
+          <p className="text-gray-300 italic mt-2">
+            📅 Çok Yakında...
+          </p>
+
+          <div className="mt-8 text-center">
+
+            <div className="text-6xl mb-4">
+              🔒
+            </div>
+
+            <p className="text-gray-300 text-lg italic">
+              Birlikte yaşayacağımız günleri yazıyorum...
+            </p>
+
+            <p className="text-pink-300 mt-3">
+              Çok az kaldı... 🤍
+            </p>
+
+          </div>
+
+        </div>
+
+        {/* 6. Mektup */}
+
+        <div className="glass rounded-3xl p-8 shadow-xl opacity-90">
+
+          <h2 className="text-2xl font-bold">
+            💌 Sonsuza Kadar Sana
+          </h2>
+
+          <p className="text-gray-300 italic mt-2">
+            📅 Çok Yakında...
+          </p>
+
+          <div className="mt-8 text-center">
+
+            <div className="text-7xl mb-4 animate-pulse">
+              🤍
+            </div>
+
+            <p className="text-gray-300 text-lg italic">
+              En özel mektup en sona saklandı...
+            </p>
+
+            <p className="text-pink-300 mt-3">
+              O gün geldiğinde birlikte okuyacağız...
+            </p>
+
+          </div>
 
         </div>
 
