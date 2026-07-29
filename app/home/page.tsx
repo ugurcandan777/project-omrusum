@@ -152,7 +152,7 @@ export default function HomePage() {
         </div>
 
         {/* Hoş Geldin */}
-        <div className="glass rounded-3xl mt-10 p-6 sm:p-8">
+        <div className="glass rounded-3xl mt-8 p-8 text-center overflow-hidden">
 
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
             Hoş Geldin Ömrüşüm 🤍
@@ -174,27 +174,34 @@ export default function HomePage() {
   "
 >
 
-<Image
-  src="/images/damla-album.JPG"
-  alt="Damla'nın Şarkısı"
-  width={300}
-  height={300}
-  priority
+<div
   className="
     mx-auto
-    w-52
-    h-52
-    md:w-72
-    md:h-72
-    object-cover
-    rounded-[28px]
-    bg-transparent
-    shadow-[0_10px_40px_rgba(0,0,0,.35)]
-    transition-all
-    duration-500
-    hover:scale-105
+    w-[300px]
+    h-[300px]
+    rounded-3xl
+    overflow-hidden
+    bg-[#020611]
+    shadow-2xl
   "
-/>
+>
+  <Image
+    src="/images/damla-album.JPG"
+    alt="Damla'nın Şarkısı"
+    width={300}
+    height={300}
+    priority
+    className="
+      w-full
+      h-full
+      object-cover
+      block
+      hover:scale-105
+      transition-all
+      duration-700
+    "
+  />
+</div> 
 
   <h2 className="text-3xl font-bold mt-6">
     🎵 Neyim Yoksa Yerine Sensin
