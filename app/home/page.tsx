@@ -1,27 +1,31 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Stars from "@/components/Stars";
 
 export default function HomePage() {
   const router = useRouter();
-const audioRef = useRef<HTMLAudioElement | null>(null);
-const [playing, setPlaying] = useState(false);
 
-function toggleSong() {
-  if (!audioRef.current) return;
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  if (playing) {
-    audioRef.current.pause();
-    setPlaying(false);
-  } else {
-    audioRef.current.play();
-    setPlaying(true);
+  const [playing, setPlaying] = useState(false);
+  const [loggingOut, setLoggingOut] = useState(false);
+
+  function toggleSong() {
+    if (!audioRef.current) return;
+
+    if (playing) {
+      audioRef.current.pause();
+      setPlaying(false);
+    } else {
+      audioRef.current.play();
+      setPlaying(true);
+    }
   }
-}
+
   useEffect(() => {
     const logged = localStorage.getItem("logged");
 
@@ -30,9 +34,35 @@ function toggleSong() {
     }
   }, [router]);
 
-  function logout() {
-    localStorage.removeItem("logged");
-    router.push("/");
+  async function logout() {
+    if (loggingOut) return;
+
+    setLoggingOut(true);
+
+    const goodbyeSongs = [
+      "/audio/goodbye1.mp3",
+      "/audio/goodbye2.mp3",
+      "/audio/goodbye3.mp3",
+    ];
+
+    const randomSong =
+      goodbyeSongs[Math.floor(Math.random() * goodbyeSongs.length)];
+
+    const goodbyeAudio = new Audio(randomSong);
+
+    goodbyeAudio.onended = () => {
+      localStorage.removeItem("logged");
+      router.push("/");
+    };
+
+    try {
+      await goodbyeAudio.play();
+    } catch (err) {
+      console.log(err);
+
+      localStorage.removeItem("logged");
+      router.push("/");
+    }
   }
 
   const cards = [
@@ -101,20 +131,23 @@ function toggleSong() {
           </div>
 
           <button
-            onClick={logout}
-            className="
-              px-6
-              py-3
-              rounded-2xl
-              bg-red-500
-              hover:bg-red-600
-              transition
-              shadow-xl
-              font-semibold
-            "
-          >
-            🚪 Çıkış Yap
-          </button>
+  onClick={logout}
+  disabled={loggingOut}
+  className="
+    px-6
+    py-3
+    rounded-2xl
+    bg-red-500
+    hover:bg-red-600
+    transition
+    shadow-xl
+    font-semibold
+    disabled:opacity-60
+    disabled:cursor-not-allowed
+  "
+>
+  {loggingOut ? "🤍 Hoşça Kal Ömrüşüm..." : "🚪 Çıkış Yap"}
+</button>
 
         </div>
 
@@ -128,55 +161,60 @@ function toggleSong() {
 
 <div className="glass rounded-3xl mt-8 p-8 text-center">
 
-<Image
-  src="/images/damla-album.JPG"
-  alt="Damla'nın Şarkısı"
-  width={260}
-  height={260}
-  className="
-    mx-auto
-    rounded-3xl
-    object-cover
-    shadow-2xl
-    hover:scale-105
-    transition-all
-    duration-700
-  "
-/>
+  <Image
+    src="/images/damla-album.JPG"
+    alt="Damla'nın Şarkısı"
+    width={300}
+    height={300}
+    priority
+    className="
+      mx-auto
+      rounded-3xl
+      object-cover
+      shadow-2xl
+      hover:scale-105
+      transition-all
+      duration-700
+    "
+  />
 
-<h2 className="text-3xl font-bold mt-6">
-  🎵 Neyim Yoksa Yerine Sensin
-</h2>
+  <h2 className="text-3xl font-bold mt-6">
+    🎵 Neyim Yoksa Yerine Sensin
+  </h2>
 
-<p className="text-pink-200 italic mt-3">
-  Damla'nın bana yazdığı şarkı... 🤍
-</p>
+  <p className="text-pink-200 italic mt-3">
+    Damla'nın bana yazdığı ilk şarkı...
+    <br />
+    Hayatım boyunca saklayacağım en değerli hediye. 🤍
+  </p>
 
-<button
-  onClick={toggleSong}
-  className="
-    mt-8
-    px-8
-    py-4
-    rounded-2xl
-    bg-pink-500
-    hover:bg-pink-600
-    transition
-    text-lg
-    font-semibold
-    shadow-xl
-    hover:scale-105
-  "
->
-  {playing ? "⏸️ Duraklat" : "▶️ Dinle"}
-</button>
+  <button
+    onClick={toggleSong}
+    className="
+      mt-8
+      px-8
+      py-4
+      rounded-2xl
+      bg-pink-500
+      hover:bg-pink-600
+      transition-all
+      duration-300
+      text-lg
+      font-semibold
+      shadow-xl
+      hover:scale-105
+    "
+  >
+    {playing ? "⏸️ Duraklat" : "▶️ Dinle"}
+  </button>
 
-<audio
-  ref={audioRef}
-  src="/music/damla.mp3"
-  onEnded={() => setPlaying(false)}
-/>
-</div>
+  <audio
+    ref={audioRef}
+    src="/music/damla.mp3"
+    onEnded={() => setPlaying(false)}
+  />
+
+</div> 
 
 
           <p className="text-gray-300 leading-8 text-sm sm:text-base md:text-lg">
