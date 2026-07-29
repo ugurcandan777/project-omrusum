@@ -159,12 +159,11 @@ body {
 /* ========================= */
 
 @keyframes heartbeat {
-
   0% {
     transform: scale(1);
   }
 
-  25% {
+  20% {
     transform: scale(1.08);
   }
 
@@ -179,11 +178,10 @@ body {
   100% {
     transform: scale(1);
   }
-
 }
 
-.heartbeat {
-  animation: heartbeat 2.2s infinite;
+.heartbeat{
+  animation: heartbeat 2.5s ease-in-out infinite;
 }
 
 /* ========================= */
