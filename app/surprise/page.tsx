@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 export default function SurprisePage() {
   const [opened, setOpened] = useState(false);
 
-  const unlockDate = new Date(2000, 0, 1);
+ const unlockDate = new Date(2026, 7, 5, 0, 0, 0);
 
   const [countdown, setCountdown] = useState({
     days: 0,
