@@ -91,6 +91,12 @@ export default function HomePage() {
       link: "/diary",
     },
     {
+     emoji: "🎁",
+     title: "Sürprizimiz",
+     desc: "Henüz zamanı gelmedi...",
+    link: "/surprise",
+},
+    {
       emoji: "🎵",
       title: "Şarkılarımız",
       desc: "Bizi anlatan melodiler.",
