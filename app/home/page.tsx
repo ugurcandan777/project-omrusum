@@ -159,24 +159,42 @@ export default function HomePage() {
           </h2>
 {/* Damla'nın Bana Yazdığı Şarkı */}
 
-<div className="glass rounded-3xl mt-8 p-8 text-center">
+<div
+  className="
+    glass
+    mt-8
+    rounded-[30px]
+    p-6
+    md:p-8
+    text-center
+    bg-white/5
+    border
+    border-white/10
+    backdrop-blur-xl
+  "
+>
 
-  <Image
-    src="/images/damla-album.JPG"
-    alt="Damla'nın Şarkısı"
-    width={300}
-    height={300}
-    priority
-    className="
-      mx-auto
-      rounded-3xl
-      object-cover
-      shadow-2xl
-      hover:scale-105
-      transition-all
-      duration-700
-    "
-  />
+<Image
+  src="/images/damla-album.JPG"
+  alt="Damla'nın Şarkısı"
+  width={300}
+  height={300}
+  priority
+  className="
+    mx-auto
+    w-52
+    h-52
+    md:w-72
+    md:h-72
+    object-cover
+    rounded-[28px]
+    bg-transparent
+    shadow-[0_10px_40px_rgba(0,0,0,.35)]
+    transition-all
+    duration-500
+    hover:scale-105
+  "
+/>
 
   <h2 className="text-3xl font-bold mt-6">
     🎵 Neyim Yoksa Yerine Sensin
