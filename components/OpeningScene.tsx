@@ -53,45 +53,50 @@ export default function OpeningScene({ onFinish }: Props) {
     <div className="fixed inset-0 z-[999] overflow-hidden bg-[#020611]">
 
       {/* Işıklar */}
-      <div className="absolute -top-60 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-blue-500/10 blur-[180px]" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[450px] h-[450px] md:w-[700px] md:h-[700px] rounded-full bg-blue-500/10 blur-[140px] md:blur-[180px]" />
 
       <div className="absolute bottom-[-250px] right-[-120px] w-[500px] h-[500px] rounded-full bg-pink-500/10 blur-[160px]" />
 
       {/* Büyük Kalp */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div
-          className="
-            heartbeat
-            text-[280px]
-            md:text-[420px]
-            opacity-[0.04]
-            select-none
-          "
-        >
+       <div
+  className="
+    heartbeat
+    text-[180px]
+    sm:text-[220px]
+    md:text-[420px]
+    opacity-[0.025]
+    select-none
+  "
+> 
           🤍
         </div>
       </div>
 
       {/* İçerik */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-8 text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center -mt-10 md:mt-0">
 
         {!showButton ? (
           <>
-            <div className="heartbeat text-7xl mb-10">
+            <div className="heartbeat text-5xl md:text-7xl mb-8">
               🤍
             </div>
 
             <h1
-              key={step}
-              className="
-                animate-fade-in
-                text-3xl
-                md:text-5xl
-                font-semibold
-                leading-relaxed
-                max-w-3xl
-              "
-            >
+  key={step}
+  className="
+    animate-fade-in
+    text-2xl
+    sm:text-3xl
+    md:text-5xl
+    font-semibold
+    leading-relaxed
+    max-w-3xl
+    text-white
+    drop-shadow-[0_0_20px_rgba(255,255,255,.25)]
+    px-6
+  "
+>
               {scenes[Math.min(step, scenes.length - 1)]}
             </h1>
           </>
