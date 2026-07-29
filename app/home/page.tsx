@@ -1,5 +1,5 @@
 "use client";
-
+import LoveHeart from "@/components/LoveHeart";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -216,7 +216,7 @@ export default function HomePage() {
 
 </div> 
 
-
+<LoveHeart />
           <p className="text-gray-300 leading-8 text-sm sm:text-base md:text-lg">
             Bu uygulama sadece bir internet sitesi değil...
             <br />
