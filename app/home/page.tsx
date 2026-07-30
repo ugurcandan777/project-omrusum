@@ -108,6 +108,13 @@ export default function HomePage() {
       desc: "Her saniyesi çok değerli.",
       link: "/countdown",
     },
+    {
+  emoji: "🤍",
+  title: "Yanındayım",
+  desc: "Canın sıkıldığında veya beni özlediğinde burada sana bırakmış olduğum ses kayıtlarını dinleyebilirsin.",
+  link: "/yanindayim",
+},
+
   ];
 
   return (
