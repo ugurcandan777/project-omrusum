@@ -265,6 +265,7 @@ export default function DayThreePage() {
           <div className="mt-8 space-y-4">
 
             <div className="bg-white/5 rounded-2xl p-5">
+
               <p className="font-semibold">
                 📉 Yoğunluğu %20–30 azalt
               </p>
@@ -273,6 +274,7 @@ export default function DayThreePage() {
                 Kendini daha yorgun hissettiğin günlerde
                 antrenman temposunu düşür.
               </p>
+
             </div>
 
 
@@ -320,17 +322,21 @@ export default function DayThreePage() {
           </div>
 
 
-          <div className="mt-7 border-t border-white/10 pt-6">
+          {/* Aşkuşu Mesajı */}
 
-            <p className="text-sm text-gray-400 leading-7">
-              <strong className="text-gray-300">
-                Önemli:
-              </strong>{" "}
-              Bu öneriler kişisel toleransa göre
-              uyarlanmalıdır. Belirgin veya alışılmadık
-              ağrı, baş dönmesi ya da başka bir sağlık
-              sorunu olduğunda egzersiz bırakılmalı ve
-              uygun sağlık profesyoneline danışılmalıdır.
+          <div className="mt-7 border-t border-white/10 pt-6 text-center">
+
+            <p className="text-pink-200 leading-8 text-base md:text-lg">
+              Herhangi bir olağanüstü durumda, kendini iyi
+              hissetmediğin bir anda veya kafana takılan bir
+              şey olduğunda <strong>Aşkuşunuza sor. 🌸</strong>
+            </p>
+
+            <p className="mt-4 text-gray-300 italic leading-8">
+              Ben senin için buradayım.
+              <br />
+              Acele etme, kendini dinle ve her şeyden önce
+              kendine iyi davran. 🤍
             </p>
 
           </div>
