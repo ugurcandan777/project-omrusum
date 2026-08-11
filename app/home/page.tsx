@@ -1,4 +1,5 @@
 "use client";
+
 import LoveHeart from "@/components/LoveHeart";
 import Image from "next/image";
 import Link from "next/link";
@@ -91,11 +92,11 @@ export default function HomePage() {
       link: "/diary",
     },
     {
-     emoji: "🎁",
-     title: "Sürprizimiz",
-     desc: "Henüz zamanı gelmedi...",
-    link: "/surprise",
-},
+      emoji: "🎁",
+      title: "Sürprizimiz",
+      desc: "Henüz zamanı gelmedi...",
+      link: "/surprise",
+    },
     {
       emoji: "🎵",
       title: "Şarkılarımız",
@@ -109,12 +110,19 @@ export default function HomePage() {
       link: "/countdown",
     },
     {
-  emoji: "🤍",
-  title: "Yanındayım",
-  desc: "Canın sıkıldığında veya beni özlediğinde burada sana bırakmış olduğum ses kayıtlarını dinleyebilirsin.",
-  link: "/yanindayim",
-},
-
+      emoji: "🤍",
+      title: "Yanındayım",
+      desc:
+        "Canın sıkıldığında veya beni özlediğinde burada sana bırakmış olduğum ses kayıtlarını dinleyebilirsin.",
+      link: "/yanindayim",
+    },
+    {
+      emoji: "🏋️",
+      title: "Senin Programın",
+      desc:
+        "Sana özel hazırladığım 3 günlük antrenman programına buradan ulaşabilirsin.",
+      link: "/program",
+    },
   ];
 
   return (
@@ -124,6 +132,7 @@ export default function HomePage() {
 
       {/* Arka plan ışıkları */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90vw] max-w-[900px] aspect-square bg-blue-500/10 blur-[180px]" />
+
       <div className="absolute bottom-0 right-0 w-[60vw] max-w-[500px] aspect-square bg-pink-500/10 blur-[160px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 py-10 md:py-16">
@@ -144,25 +153,28 @@ export default function HomePage() {
           </div>
 
           <button
-  onClick={logout}
-  disabled={loggingOut}
-  className="
-    px-6
-    py-3
-    rounded-2xl
-    bg-red-500
-    hover:bg-red-600
-    transition
-    shadow-xl
-    font-semibold
-    disabled:opacity-60
-    disabled:cursor-not-allowed
-  "
->
-  {loggingOut ? "🤍 Hoşça Kal Ömrüşüm..." : "🚪 Çıkış Yap"}
-</button>
+            onClick={logout}
+            disabled={loggingOut}
+            className="
+              px-6
+              py-3
+              rounded-2xl
+              bg-red-500
+              hover:bg-red-600
+              transition
+              shadow-xl
+              font-semibold
+              disabled:opacity-60
+              disabled:cursor-not-allowed
+            "
+          >
+            {loggingOut
+              ? "🤍 Hoşça Kal Ömrüşüm..."
+              : "🚪 Çıkış Yap"}
+          </button>
 
         </div>
+
 
         {/* Hoş Geldin */}
         <div className="glass rounded-3xl mt-8 p-8 text-center overflow-hidden">
@@ -170,91 +182,100 @@ export default function HomePage() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
             Hoş Geldin Ömrüşüm 🤍
           </h2>
-{/* Damla'nın Bana Yazdığı Şarkı */}
 
-<div
-  className="
-    glass
-    mt-8
-    rounded-[30px]
-    p-6
-    md:p-8
-    text-center
-    bg-white/5
-    border
-    border-white/10
-    backdrop-blur-xl
-  "
->
 
-<div
-  className="
-    mx-auto
-    w-[300px]
-    h-[300px]
-    rounded-3xl
-    overflow-hidden
-    bg-[#020611]
-    shadow-2xl
-  "
->
-  <Image
-    src="/images/damla-album.JPG"
-    alt="Damla'nın Şarkısı"
-    width={300}
-    height={300}
-    priority
-    className="
-      w-full
-      h-full
-      object-cover
-      block
-      hover:scale-105
-      transition-all
-      duration-700
-    "
-  />
-</div> 
+          {/* Damla'nın Bana Yazdığı Şarkı */}
 
-  <h2 className="text-3xl font-bold mt-6">
-    🎵 Neyim Yoksa Yerine Sensin
-  </h2>
+          <div
+            className="
+              glass
+              mt-8
+              rounded-[30px]
+              p-6
+              md:p-8
+              text-center
+              bg-white/5
+              border
+              border-white/10
+              backdrop-blur-xl
+            "
+          >
 
-  <p className="text-pink-200 italic mt-3">
-    Damla'nın bana yazdığı ilk şarkı...
-    <br />
-    Hayatım boyunca saklayacağım en değerli hediye. 🤍
-  </p>
+            <div
+              className="
+                mx-auto
+                w-[300px]
+                h-[300px]
+                rounded-3xl
+                overflow-hidden
+                bg-[#020611]
+                shadow-2xl
+              "
+            >
 
-  <button
-    onClick={toggleSong}
-    className="
-      mt-8
-      px-8
-      py-4
-      rounded-2xl
-      bg-pink-500
-      hover:bg-pink-600
-      transition-all
-      duration-300
-      text-lg
-      font-semibold
-      shadow-xl
-      hover:scale-105
-    "
-  >
-    {playing ? "⏸️ Duraklat" : "▶️ Dinle"}
-  </button>
+              <Image
+                src="/images/damla-album.JPG"
+                alt="Damla'nın Şarkısı"
+                width={300}
+                height={300}
+                priority
+                className="
+                  w-full
+                  h-full
+                  object-cover
+                  block
+                  hover:scale-105
+                  transition-all
+                  duration-700
+                "
+              />
 
-  <audio
-    ref={audioRef}
-    src="/music/damla.mp3"
-    onEnded={() => setPlaying(false)}
-  />
+            </div>
 
-</div> 
 
-<LoveHeart />
+            <h2 className="text-3xl font-bold mt-6">
+              🎵 Neyim Yoksa Yerine Sensin
+            </h2>
+
+            <p className="text-pink-200 italic mt-3">
+              Damla'nın bana yazdığı ilk şarkı...
+              <br />
+              Hayatım boyunca saklayacağım en değerli hediye. 🤍
+            </p>
+
+
+            <button
+              onClick={toggleSong}
+              className="
+                mt-8
+                px-8
+                py-4
+                rounded-2xl
+                bg-pink-500
+                hover:bg-pink-600
+                transition-all
+                duration-300
+                text-lg
+                font-semibold
+                shadow-xl
+                hover:scale-105
+              "
+            >
+              {playing ? "⏸️ Duraklat" : "▶️ Dinle"}
+            </button>
+
+
+            <audio
+              ref={audioRef}
+              src="/music/damla.mp3"
+              onEnded={() => setPlaying(false)}
+            />
+
+          </div>
+
+
+          <LoveHeart />
+
           <p className="text-gray-300 leading-8 text-sm sm:text-base md:text-lg">
             Bu uygulama sadece bir internet sitesi değil...
             <br />
@@ -265,7 +286,9 @@ export default function HomePage() {
 
         </div>
 
+
         {/* Günün Mesajı */}
+
         <div className="mt-8 rounded-3xl bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-300/20 p-6 shadow-xl">
 
           <h2 className="text-2xl font-bold mb-3">
@@ -278,7 +301,9 @@ export default function HomePage() {
 
         </div>
 
+
         {/* Kartlar */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 mt-12">
 
           {cards.map((card) => (
@@ -315,7 +340,9 @@ export default function HomePage() {
 
         </div>
 
+
         {/* Alt Yazı */}
+
         <div className="mt-20 text-center">
 
           <div className="text-4xl heartbeat">
