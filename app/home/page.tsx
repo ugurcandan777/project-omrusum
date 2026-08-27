@@ -115,7 +115,12 @@ export default function HomePage() {
       desc:
         "Canın sıkıldığında veya beni özlediğinde burada sana bırakmış olduğum ses kayıtlarını dinleyebilirsin.",
       link: "/yanindayim",
-    },
+    },{
+  emoji: "❤️",
+  title: "Kalbimi Yakala",
+  desc: "Aşkuşunun kalbini ne kadar hızlı yakalayabilirsin? 🎮🤍",
+  link: "/game",
+},
     {
       emoji: "🏋️",
       title: "Senin Programın",
